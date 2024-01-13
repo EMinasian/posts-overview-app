@@ -1,9 +1,10 @@
+import './Posts.css'
 
 export default function Posts ({ author, text }) {
     return (
-      <>
-        <h2>{author}</h2>
-        <p>{text}</p>
-      </>
+      <div className='post-layout'>
+        <span className='author-name'>{author}</span>
+        <p className=''>{text}</p>
+      </div>
     );
   };

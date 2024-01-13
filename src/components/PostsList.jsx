@@ -1,14 +1,11 @@
 
 import Posts from "./Posts";
-
-const posts = [
-  { author: "Jack", text: "Twitter is good!" },
-  { author: "Tom", text: "Facebook is not working." },
-];
+import posts from "../assets/mockPosts.json";
+import './PostsList.css'
 
 export default function PostsList () {
   return (
-    <ul>
+    <ul className="posts-list">
       {posts.map(post => <Posts author={post.author} text={post.text} />)}
     </ul>
   );
