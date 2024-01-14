@@ -5,7 +5,7 @@ import "../../Global.css"
 
 export default function PostsList() {
   return (
-    <div className="separated-section">
+    <div>
       <h2 className="main-title">Post List</h2>
       <ul className="posts-list">
         {posts.map((post) => (
