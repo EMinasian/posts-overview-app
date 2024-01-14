@@ -1,0 +1,11 @@
+.main-title {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.separated-section {
+    border-bottom: 2px solid white;
+    width: 80%;
+    margin-bottom: 16px;
+}

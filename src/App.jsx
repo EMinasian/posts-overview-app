@@ -1,10 +1,11 @@
 import PostsList from "./components/PostsList";
+import NewPost from "./components/NewPost/NewPost";
 import "./App.css";
 
 function App() {
   return (
     <div className="main-container">
-      <h1 className="main-title">Post List</h1>
+      <NewPost />
       <PostsList />
     </div>
   );
