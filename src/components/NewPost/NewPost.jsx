@@ -19,6 +19,7 @@ export default function NewPost() {
             onChange={(event) => setName(event.target.value)}
             id="author-name"
             className="input-box"
+            required
           />
         </div>
         <div className="input-field">
@@ -31,10 +32,11 @@ export default function NewPost() {
             onChange={(event) => {
               setText(event.target.value);
             }}
+            required
           />
         </div>  
       </form>
-      <NewPostDisplay />
+      <NewPostDisplay author={authorName} text={messageText}/>
     </div>
   );
 }

@@ -16,3 +16,9 @@
 .post-text {
     font-size: 14px;
 }
+
+.required-error {
+    font-size: 14px;
+    color: red;
+    font-weight: 600;
+}
