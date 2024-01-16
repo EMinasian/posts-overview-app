@@ -5,16 +5,12 @@
 
 .post-layout {
     width: 40%;
-    min-width: 280px;
+    min-width: 260px;
     background-color: #DCF2F1;
     padding: 18px;
     margin: 5px;
     border-radius: 8px;
     border: 2px solid #3887BE;
-}
-
-.post-text {
-    font-size: 14px;
 }
 
 .required-error {
