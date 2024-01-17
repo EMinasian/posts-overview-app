@@ -1,0 +1,19 @@
+.create-icon-post {
+    margin-right: 12px;
+    font-size: 18px;
+}
+
+.header-layout {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #424769;
+    justify-content: space-between;
+}
+
+.header-title {
+    display: flex;
+    color: #FF9843;
+    gap: 6px;
+    padding: 0 14px;
+}

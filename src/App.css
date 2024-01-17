@@ -7,16 +7,5 @@
     flex-direction: column;
     align-items: center;
     align-self: center;
-}
-
-.create-button {
-    background-color: #FFBB64;
-    color: #2D3250;
-    padding: 12px 20px;
-    margin: 10px;
-    font-size: 14px;
-    font-weight: 600;
-    border-radius: 8px;
-    border: 2px solid #2D3250;
-    cursor: pointer;
+    margin-top: 24px;
 }
