@@ -13,7 +13,7 @@ function App() {
       <main className="main-container">
         <PostsList />
         <Modal visible={modalVisible} setVisible={setVisible}>
-          <NewPost />
+          <NewPost setVisible={setVisible}/>
         </Modal>
         <button
           class="create-button"

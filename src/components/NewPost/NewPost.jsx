@@ -1,14 +1,26 @@
 import { useState } from "react";
 import NewPostDisplay from "../NewPostDisplay/NewPostDisplay";
+import posts from "../../assets/mockPosts";
 import "../../Global.css";
 import "./NewPost.css";
 
-export default function NewPost() {
+export default function NewPost({ setVisible }) {
   const [authorName, setName] = useState("");
   const [messageText, setText] = useState("");
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    posts.push({
+      author: authorName,
+      text: messageText,
+    });
+    console.log('success')
+    setVisible(false);
+  }
+
   return (
     <div className="new-post-section">
-      <form className="input-form">
+      <form className="input-form" onSubmit={handleSubmit}>
         <h2 className="main-title">Create a New Post</h2>
         <div className="input-field">
           <label htmlFor="author-name" className="new-post-label">
@@ -34,9 +46,19 @@ export default function NewPost() {
             }}
             required
           />
-        </div>  
+        </div>
+        <button className="submit-button">Submit</button>
+        <button
+          type="button"
+          className="cancel-button"
+          onClick={() => {
+            setVisible(false);
+          }}
+        >
+          Cancel
+        </button>
       </form>
-      <NewPostDisplay author={authorName} text={messageText}/>
+      <NewPostDisplay author={authorName} text={messageText} />
     </div>
   );
 }

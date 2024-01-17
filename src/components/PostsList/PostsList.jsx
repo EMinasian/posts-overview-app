@@ -1,5 +1,5 @@
 import Posts from "../Posts";
-import posts from "../../assets/mockPosts.json";
+import posts from "../../assets/mockPosts";
 import "./PostsList.css";
 import "../../Global.css"
 
