@@ -1,20 +1,19 @@
 import { useState } from "react";
 import NewPostDisplay from "../NewPostDisplay/NewPostDisplay";
-import posts from "../../assets/mockPosts";
 import "../../Global.css";
 import "./NewPost.css";
 
-export default function NewPost({ setVisible }) {
+export default function NewPost({ setVisible, posts, addPost }) {
   const [authorName, setName] = useState("");
   const [messageText, setText] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
-    posts.push({
+    const newPost = {
       author: authorName,
       text: messageText,
-    });
-    console.log('success')
+    }
+    addPost((existingPosts) => [...existingPosts, newPost])
     setVisible(false);
   }
 

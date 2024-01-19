@@ -1,9 +1,8 @@
 import Posts from "../Posts";
-import posts from "../../assets/mockPosts";
 import "./PostsList.css";
 import "../../Global.css"
 
-export default function PostsList() {
+export default function PostsList({ posts }) {
   return (
     <div>
       <h2 className="main-title">Post List</h2>
