@@ -11,7 +11,7 @@ export default function NewPost({ setVisible, posts, addPost }) {
     event.preventDefault();
     const newPost = {
       author: authorName,
-      text: messageText,
+      body: messageText,
     }
     addPost((existingPosts) => [...existingPosts, newPost])
     setVisible(false);
@@ -57,7 +57,7 @@ export default function NewPost({ setVisible, posts, addPost }) {
           Cancel
         </button>
       </form>
-      <NewPostDisplay author={authorName} text={messageText} />
+      <NewPostDisplay author={authorName} body={messageText} />
     </div>
   );
 }
