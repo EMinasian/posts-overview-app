@@ -1,5 +1,6 @@
 import { useState } from "react";
 import NewPostDisplay from "../NewPostDisplay/NewPostDisplay";
+import createPost from "../../utils/createPost";
 import "../../Global.css";
 import "./NewPost.css";
 
@@ -7,13 +8,13 @@ export default function NewPost({ setVisible, posts, addPost }) {
   const [authorName, setName] = useState("");
   const [messageText, setText] = useState("");
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
     const newPost = {
       author: authorName,
       body: messageText,
     }
-    addPost((existingPosts) => [...existingPosts, newPost])
+    await createPost(newPost)
     setVisible(false);
   }
 

@@ -17,7 +17,7 @@ function App() {
       addPost(posts)
     }
     runEffect()    
-  }, []);
+  });
 
   return (
     <>
