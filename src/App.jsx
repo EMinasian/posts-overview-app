@@ -6,32 +6,34 @@ import { getPosts } from "./utils";
 import "./App.css";
 import { useEffect, useState } from "react";
 
-function App() { 
-
+function App() {
   const [modalVisible, setVisible] = useState(false);
   const [listPosts, addPost] = useState([]);
-  const [isLoading, setIsLoading ] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [reload, triggerReload] = useState(false);
 
   useEffect(() => {
-    async function runEffect () {
-      setIsLoading(true)
-      const posts = await getPosts()
-      setIsLoading(false)
-      addPost(posts)
+    async function runEffect() {
+      setIsLoading(true);
+      const posts = await getPosts();
+      setIsLoading(false);
+      addPost(posts);
     }
-    runEffect()    
-  }, []);
+    runEffect();
+  }, [reload]);
 
   return (
     <>
       <Header setVisible={setVisible} />
       <main className="main-container">
-        <PostsList posts={listPosts} isLoading={isLoading}/>
+        <PostsList posts={listPosts} isLoading={isLoading} />
         <Modal visible={modalVisible} setVisible={setVisible}>
           <NewPost
             setVisible={setVisible}
             posts={listPosts}
             addPost={addPost}
+            reload={reload}
+            triggerReload={triggerReload}
           />
         </Modal>
         <button

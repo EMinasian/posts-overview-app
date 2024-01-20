@@ -4,7 +4,7 @@ import createPost from "../../utils/createPost";
 import "../../Global.css";
 import "./NewPost.css";
 
-export default function NewPost({ setVisible, posts, addPost }) {
+export default function NewPost({ setVisible, reload, triggerReload }) {
   const [authorName, setName] = useState("");
   const [messageText, setText] = useState("");
 
@@ -16,6 +16,7 @@ export default function NewPost({ setVisible, posts, addPost }) {
     }
     await createPost(newPost)
     setVisible(false);
+    triggerReload(!reload)
   }
 
   return (
