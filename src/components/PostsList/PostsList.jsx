@@ -2,7 +2,12 @@ import Posts from "../Posts";
 import "./PostsList.css";
 import "../../Global.css";
 
-export default function PostsList({ posts }) {
+export default function PostsList({ posts, isLoading }) {
+  if (isLoading) {
+    return (
+      <p>Loading...</p>
+    )
+  }
   return (
     <div>
       <h2 className="main-title">Post List</h2>

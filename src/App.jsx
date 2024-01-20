@@ -10,20 +10,23 @@ function App() {
 
   const [modalVisible, setVisible] = useState(false);
   const [listPosts, addPost] = useState([]);
+  const [isLoading, setIsLoading ] = useState(false);
 
   useEffect(() => {
     async function runEffect () {
+      setIsLoading(true)
       const posts = await getPosts()
+      setIsLoading(false)
       addPost(posts)
     }
     runEffect()    
-  });
+  }, []);
 
   return (
     <>
       <Header setVisible={setVisible} />
       <main className="main-container">
-        <PostsList posts={listPosts} />
+        <PostsList posts={listPosts} isLoading={isLoading}/>
         <Modal visible={modalVisible} setVisible={setVisible}>
           <NewPost
             setVisible={setVisible}
