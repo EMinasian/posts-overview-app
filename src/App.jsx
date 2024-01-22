@@ -1,7 +1,6 @@
 import PostsList from "./Routes/PostsList";
 import NewPost from "./Routes/NewPost";
 import Modal from "./components/Modal";
-import Header from "./components/Header/Header";
 import { getPosts } from "./utils";
 import "./App.css";
 import { useEffect, useState } from "react";

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import NewPostDisplay from "../../components/NewPostDisplay/NewPostDisplay";
 import Modal from "../../components/Modal";
@@ -49,16 +50,13 @@ export default function NewPost({ setVisible, reload, triggerReload }) {
             required
           />
         </div>
-        <button className="submit-button">Submit</button>
-        <button
-          type="button"
-          className="cancel-button"
-          onClick={() => {
-            setVisible(false);
-          }}
+        <button className="button submit-button">Submit</button>
+        <Link
+          to="/"
+          className="button cancel-button"
         >
           Cancel
-        </button>
+        </Link>
       </form>
       <NewPostDisplay author={authorName} body={messageText} />
     </Modal>
