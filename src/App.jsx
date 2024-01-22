@@ -1,5 +1,5 @@
-import PostsList from "./components/PostsList";
-import NewPost from "./components/NewPost";
+import PostsList from "./Routes/PostsList";
+import NewPost from "./Routes/NewPost";
 import Modal from "./components/Modal";
 import Header from "./components/Header/Header";
 import { getPosts } from "./utils";
@@ -24,7 +24,6 @@ function App() {
 
   return (
     <>
-      <Header setVisible={setVisible} />
       <main className="main-container">
         <PostsList posts={listPosts} isLoading={isLoading} />
         <Modal visible={modalVisible} setVisible={setVisible}>
@@ -36,14 +35,6 @@ function App() {
             triggerReload={triggerReload}
           />
         </Modal>
-        <button
-          className="create-button"
-          onClick={() => {
-            setVisible(true);
-          }}
-        >
-          Create
-        </button>
       </main>
     </>
   );

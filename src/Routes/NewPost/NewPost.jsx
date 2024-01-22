@@ -1,5 +1,6 @@
 import { useState } from "react";
-import NewPostDisplay from "../NewPostDisplay/NewPostDisplay";
+import NewPostDisplay from "../../components/NewPostDisplay/NewPostDisplay";
+import Modal from "../../components/Modal";
 import createPost from "../../utils/createPost";
 import "../../Global.css";
 import "./NewPost.css";
@@ -13,14 +14,14 @@ export default function NewPost({ setVisible, reload, triggerReload }) {
     const newPost = {
       author: authorName,
       body: messageText,
-    }
-    await createPost(newPost)
+    };
+    await createPost(newPost);
     setVisible(false);
-    triggerReload(!reload)
+    triggerReload(!reload);
   }
 
   return (
-    <div className="new-post-section">
+    <Modal className="new-post-section">
       <form className="input-form" onSubmit={handleSubmit}>
         <h2 className="main-title">Create a New Post</h2>
         <div className="input-field">
@@ -60,6 +61,6 @@ export default function NewPost({ setVisible, reload, triggerReload }) {
         </button>
       </form>
       <NewPostDisplay author={authorName} body={messageText} />
-    </div>
+    </Modal>
   );
 }
