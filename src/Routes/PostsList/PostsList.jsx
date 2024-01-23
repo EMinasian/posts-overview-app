@@ -1,12 +1,12 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLoaderData } from "react-router-dom";
 import Posts from "../../components/Posts";
+import { getPosts } from "../../utils";
 import "./PostsList.css";
 import "../../Global.css";
 
-export default function PostsList({ posts, isLoading }) {
-  if (isLoading) {
-    return <p>Loading...</p>;
-  }
+export default function PostsList() {
+  const posts = useLoaderData();
+
   return (
     <div>
       <Outlet />
@@ -20,7 +20,11 @@ export default function PostsList({ posts, isLoading }) {
           ))}
         </ul>
       )}
-
     </div>
   );
+}
+
+export async function loader() {
+  const posts = await getPosts();
+  return posts;
 }
