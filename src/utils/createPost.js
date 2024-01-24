@@ -2,7 +2,7 @@ import { BACKEND_URL } from "./consts";
 
 async function createPost(newPost) {
   try {
-    const postsResponse = await fetch(`${BACKEND_URL}/posts`, {
+    await fetch(`${BACKEND_URL}/posts`, {
         method: 'post',
         body: JSON.stringify(newPost),
         headers: {
@@ -12,7 +12,6 @@ async function createPost(newPost) {
     });
   } catch (e) {
     console.log("posts creation failed", e);
-    return [];
   }
 }
 

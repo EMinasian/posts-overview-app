@@ -1,3 +1,8 @@
 .posts-list {
     width: 100%;
 }
+
+.post-box {
+    color: black;
+    text-decoration: none;
+}
