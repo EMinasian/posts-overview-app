@@ -1,7 +1,8 @@
+import React from 'react'
 import './Posts.css'
 import '../../Global.css'
 
-export default function Posts ({ author, body }) {
+export default function Posts ({ author, body }: { author: string, body: string}) {
     return (
       <div className='post-layout'>
         <span className={author ? 'author-name' : 'required-error'}>{author || "* The author's name is required"}</span>

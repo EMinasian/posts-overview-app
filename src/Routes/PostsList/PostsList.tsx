@@ -1,3 +1,4 @@
+import React from "react";
 import { Outlet, useLoaderData, Link } from "react-router-dom";
 import Posts from "../../components/Posts";
 import { getPosts } from "../../utils";
@@ -5,7 +6,7 @@ import "./PostsList.css";
 import "../../Global.css";
 
 export default function PostsList() {
-  const posts = useLoaderData();
+  const posts = useLoaderData() as Array<any>;
 
   return (
     <div>

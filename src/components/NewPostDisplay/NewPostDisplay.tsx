@@ -1,8 +1,9 @@
+import React from 'react'
 import Posts from "../Posts";
 import "./NewPostDisplay.css"
 import '../../Global.css'
 
-export default function NewPostDisplay({author, body}) {
+export default function NewPostDisplay({author, body}: { author: string, body: string}) {
 
   if (!author && !body) {
     return (<></>);

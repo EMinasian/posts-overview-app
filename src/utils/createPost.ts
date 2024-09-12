@@ -1,6 +1,6 @@
 import { BACKEND_URL } from "./consts";
 
-async function createPost(newPost) {
+async function createPost(newPost: any) {
   try {
     await fetch(`${BACKEND_URL}/posts`, {
         method: 'post',

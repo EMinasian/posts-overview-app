@@ -1,6 +1,6 @@
 import { BACKEND_URL } from "./consts";
 
-async function getPost(postId) {
+async function getPost(postId: any) {
     try {
         const postsResponse = await fetch(`${BACKEND_URL}/posts/${postId}`);
         const postsJosn = await postsResponse.json()
